@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import {BrowserRouter as Router} from 'react-router-dom';
+import {LanguageProvider} from './hooks/useLanguage';
 import './index.css';
-import {LanguageProvider} from "./hooks/useLanguage"; // Your base styles
-
 
 ReactDOM.render(
   <React.StrictMode>
-    <LanguageProvider>
-      <App/>
-    </LanguageProvider>
+    <Router>
+
+      <LanguageProvider>
+        <App/>
+      </LanguageProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
