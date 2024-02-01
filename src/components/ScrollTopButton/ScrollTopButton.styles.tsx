@@ -6,6 +6,7 @@ interface ScrollTopButtonProps {
 
 export const ScrollTopButton = styled.a<ScrollTopButtonProps>`
     position: fixed;
+    text-decoration: none;
     right: 1rem;
     bottom: 5rem;
     display: flex;

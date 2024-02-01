@@ -16,7 +16,6 @@ import SocialLinks from "./components/SocialLinks/SocialLinks";
 import Home from "./components/SectionComponent/Home/Home";
 import Education from "./components/SectionComponent/Education/Education";
 import Experience from "./components/SectionComponent/Experience/Experience";
-import Skills from "./components/SectionComponent/Skills/Skills";
 import ScrollTopButton from "./components/ScrollTopButton/ScrollTopButton";
 import useMobileView from "./hooks/useMobileView";
 import {MainContainer, ResumeContainer, ResumeLeft, ResumeRight} from "./App.styles";
@@ -54,7 +53,6 @@ function App() {
         socialLinks: [],
         profile: '',
         education: [],
-        skills: [],
         experience: [],
         certificates: [],
         references: [],
@@ -70,7 +68,6 @@ function App() {
         profile: '',
         experience: '',
         education: '',
-        skills: '',
         certificates: '',
         references: '',
         languages: '',
@@ -218,7 +215,7 @@ function App() {
             {cvData?.socialLinks && <SocialLinks socialLinks={cvData.socialLinks} title={localeData?.social}/>}
             {cvData?.profile && <Profile title={localeData?.profile} description={cvData.profile}/>}
             {cvData?.education.length > 0 && <Education education={cvData.education} title={localeData?.education}/>}
-            {cvData?.skills.length > 0 && <Skills skills={cvData.skills} title={localeData?.skills}/>}
+            {cvData?.languages && <Languages languages={cvData.languages} title={localeData?.languages}/>}
           </ResumeLeft>
 
           <ResumeRight>
@@ -234,7 +231,6 @@ function App() {
             {cvData?.references.length > 0 &&
               <References references={cvData.references} title={localeData?.references}
                           email={localeData?.referencesemail} phone={localeData?.referencesphone}/>}
-            {cvData?.languages && <Languages languages={cvData.languages} title={localeData?.languages}/>}
             {cvData?.interests && <Interests interests={cvData.interests} title={localeData?.interests}/>}
           </ResumeRight>
         </ResumeContainer>

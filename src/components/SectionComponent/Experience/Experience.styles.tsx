@@ -59,3 +59,19 @@ export const ExperiencePeriod = styled.span`
 export const ExperienceDescription = styled.p`
     margin-top: 5px;
 `;
+
+export const SkillsContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+`;
+
+export const SkillBubble = styled.span`
+    background-color: var(--container-color-alt); // Grey background
+    color: var(--text-color); // Text color
+    padding: 3px 10px; // Adjust padding as needed
+    border-radius: 15px; // Rounded corners
+    font-size: var(--smaller-font-size);
+    white-space: nowrap; // Prevents the skill text from wrapping
+`;

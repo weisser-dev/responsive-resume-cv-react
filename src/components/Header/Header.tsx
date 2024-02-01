@@ -39,8 +39,8 @@ const Header: React.FC<HeaderProps> = ({name, localeData, isMenuOpen, toggleMenu
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#skills">
-              <i className='bx bx-receipt nav_icon'></i>{localeData.skills}
+            <NavLink href="#languages">
+              <i className='bx bxs-plane-land nav_icon'></i>{localeData.languages}
             </NavLink>
           </NavItem>
           <NavItem>
@@ -59,8 +59,8 @@ const Header: React.FC<HeaderProps> = ({name, localeData, isMenuOpen, toggleMenu
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#languages">
-              <i className='bx bxs-plane-land nav_icon'></i>{localeData.languages}
+            <NavLink href="#interests">
+              <i className='bx bx-code nav_icon'></i>{localeData.interests}
             </NavLink>
           </NavItem>
         </NavList>

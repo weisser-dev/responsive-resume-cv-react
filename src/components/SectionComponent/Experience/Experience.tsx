@@ -1,4 +1,3 @@
-// src/components/Experience/Experience.tsx
 import React from 'react';
 import SectionComponent from "../SectionComponent";
 import {
@@ -11,7 +10,9 @@ import {
   ExperiencePeriod,
   ExperienceRounder,
   ExperienceTime,
-  ExperienceTitle
+  ExperienceTitle,
+  SkillBubble,
+  SkillsContainer
 } from './Experience.styles';
 
 interface ExperienceEntry {
@@ -20,6 +21,7 @@ interface ExperienceEntry {
   period: string;
   description: string;
   url: string;
+  skills?: string[];
 }
 
 interface ExperienceProps {
@@ -40,9 +42,17 @@ const Experience: React.FC<ExperienceProps> = ({experience, title}) => {
             <ExperienceData>
               <ExperienceTitle>{exp.title}</ExperienceTitle>
               <ExperiencePeriod>{exp.period}</ExperiencePeriod> |
-              <a href={exp.url} target={"_blank"}>
-                <ExperienceCompany> {exp.company}</ExperienceCompany></a>
+              <a href={exp.url} target="_blank" rel="noopener noreferrer">
+                <ExperienceCompany> {exp.company}</ExperienceCompany>
+              </a>
               <ExperienceDescription>{exp.description}</ExperienceDescription>
+              {exp.skills && ( // Conditionally render the SkillsContainer if skills are available
+                <SkillsContainer>
+                  {exp.skills.map((skill, i) => (
+                    <SkillBubble key={i}>{skill}</SkillBubble>
+                  ))}
+                </SkillsContainer>
+              )}
             </ExperienceData>
           </ExperienceContent>
         ))}

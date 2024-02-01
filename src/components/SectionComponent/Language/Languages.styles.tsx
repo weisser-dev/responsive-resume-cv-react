@@ -21,7 +21,7 @@ export const LanguageName = styled.span`
 
 export const LanguageProficiencyBar = styled.div<{ proficiency: number }>`
     width: 60%; // default width, adjust as needed
-    background-color: var(--container-color-alt);
+    background-color: var(--container-color);
     margin-left: 1rem;
     position: relative;
     border-radius: 5px;

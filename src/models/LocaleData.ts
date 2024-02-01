@@ -7,7 +7,6 @@ export interface LocaleData {
   profile: string;
   experience: string;
   education: string;
-  skills: string;
   certificates: string;
   references: string;
   languages: string;

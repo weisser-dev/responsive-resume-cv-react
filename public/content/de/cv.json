@@ -34,59 +34,20 @@
       "year": "2018 - 2019"
     }
   ],
-  "skills": [
-    {
-      "name": "Apportieren",
-      "proficiency": 1
-    },
-    {
-      "name": "Schlafen",
-      "proficiency": 5
-    },
-    {
-      "name": "Trickaufführung",
-      "proficiency": 1
-    },
-    {
-      "name": "Emotionale Unterstützung",
-      "proficiency": 5
-    },
-    {
-      "name": "Bellen",
-      "proficiency": 2
-    },
-    {
-      "name": "Essen",
-      "proficiency": 5
-    },
-    {
-      "name": "Graben",
-      "proficiency": 3
-    },
-    {
-      "name": "Kuscheln",
-      "proficiency": 5
-    },
-    {
-      "name": "Fangen spielen",
-      "proficiency": 4
-    },
-    {
-      "name": "Bewachen",
-      "proficiency": 1
-    },
-    {
-      "name": "Schnüffeln",
-      "proficiency": 5
-    }
-  ],
   "experience": [
     {
       "title": "Junior FeelGood Manager",
       "company": "Happy Paws",
       "period": "2017 - 2019",
       "description": "Verantwortlich für die Begrüßung von Besuchern mit freudigem Gebell und die Sicherstellung optimaler Glückslevel in der Einrichtung.",
-      "url": "https://github.com/weisser-dev/responsive-resume-cv-react"
+      "url": "https://github.com/weisser-dev/responsive-resume-cv-react",
+      "skills": [
+        "bellen",
+        "freuen",
+        "kuscheln",
+        "knuddeln",
+        "schlafen"
+      ]
     },
     {
       "title": "Chef-Kuschelbeauftragter",
@@ -127,7 +88,7 @@
         "phone": "+1 (555) 789-0123",
         "email": "luna@weisser.dev",
         "web": {
-          "title": "GitHub",
+          "title": "LinkedIn",
           "url": "https://github.com/weisser-dev"
         }
       }

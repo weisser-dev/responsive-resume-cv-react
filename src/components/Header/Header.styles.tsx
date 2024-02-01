@@ -13,6 +13,10 @@ export const HeaderContainer = styled.header`
     @media screen and (min-width: 968px) {
         display: none;
     }
+
+    a {
+        text-decoration: none;
+    }
 `;
 
 export const Nav = styled.nav`

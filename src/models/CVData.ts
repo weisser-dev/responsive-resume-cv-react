@@ -25,6 +25,7 @@ interface ExperienceEntry {
   period: string;
   description: string;
   url: string;
+  skills?: string[]; // Optional skills array
 }
 
 interface Certificate {
@@ -41,10 +42,6 @@ interface Reference {
   contact: Contact;
 }
 
-export interface Skill {
-  name: string;
-  proficiency: number;
-}
 
 export interface CVData {
   name: string;
@@ -54,7 +51,6 @@ export interface CVData {
   socialLinks: SocialLink[];
   profile: string;
   education: EducationEntry[];
-  skills: Skill[];
   experience: ExperienceEntry[];
   certificates: Certificate[];
   references: Reference[];
