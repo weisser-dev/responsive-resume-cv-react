@@ -21,7 +21,7 @@
       "url": "https://github.com/weisser-dev/responsive-resume-cv-react"
     }
   ],
-  "profile": "An enthusiast for long walks and hearty treats, dedicated to spreading joy and relaxation. With several years of experience in tail wagging and ball chasing, I understand how to bring comfort and happiness to the environment.",
+  "profile": "An enthusiast for long walks and hearty treats, dedicated to spreading joy and relaxation. With several years of experience in tail-wagging and ball-chasing, I understand how to bring comfort and happiness to the surroundings.",
   "education": [
     {
       "title": "Advanced Treat Negotiations",
@@ -34,86 +34,47 @@
       "year": "2018 - 2019"
     }
   ],
-  "skills": [
-    {
-      "name": "Fetching",
-      "proficiency": 1
-    },
-    {
-      "name": "Sleeping",
-      "proficiency": 5
-    },
-    {
-      "name": "Trick Performance",
-      "proficiency": 1
-    },
-    {
-      "name": "Emotional Support",
-      "proficiency": 5
-    },
-    {
-      "name": "Barking",
-      "proficiency": 2
-    },
-    {
-      "name": "Eating",
-      "proficiency": 5
-    },
-    {
-      "name": "Digging",
-      "proficiency": 3
-    },
-    {
-      "name": "Cuddling",
-      "proficiency": 5
-    },
-    {
-      "name": "Playing Catch",
-      "proficiency": 4
-    },
-    {
-      "name": "Guarding",
-      "proficiency": 1
-    },
-    {
-      "name": "Sniffing",
-      "proficiency": 5
-    }
-  ],
   "experience": [
     {
       "title": "Junior FeelGood Manager",
       "company": "Happy Paws",
       "period": "2017 - 2019",
-      "description": "Responsible for greeting visitors with joyful barking and ensuring optimal happiness levels in the facility.",
-      "url": "https://github.com/weisser-dev/responsive-resume-cv-react"
+      "description": "Responsible for welcoming visitors with joyful barking and ensuring optimal happiness levels in the facility.",
+      "url": "https://github.com/weisser-dev/responsive-resume-cv-react",
+      "skills": [
+        "barking",
+        "joy",
+        "cuddling",
+        "petting",
+        "sleeping"
+      ]
     },
     {
       "title": "Chief Cuddle Officer",
       "company": "Bark and Snuggle",
       "period": "2014 - 2017",
-      "description": "Provided essential cuddling services to customers to improve their emotional well-being and stress levels.",
+      "description": "Providing essential cuddling services to customers to enhance their emotional well-being and reduce stress levels.",
       "url": "https://github.com/weisser-dev/responsive-resume-cv-react"
     }
   ],
   "certificates": [
     {
-      "title": "Certified Cuddle Expert",
-      "description": "Graduated from the Good Doggo School with top honors, specializing in imitating a stuffed animal.",
+      "title": "Certified Stuffed Animal",
+      "description": "Graduated with honors from the Good Doggo School and specialized in imitating a stuffed animal.",
       "date": "2021-06",
       "url": "https://github.com/weisser-dev/responsive-resume-cv-react",
       "certificationId": "GB-12345"
     },
     {
-      "title": "Professional Barking Master",
-      "description": "Certified in advanced barking techniques and noiseless guarding to ensure property safety without noise.",
+      "title": "Professional Bark Master",
+      "description": "Certified in advanced barking techniques and silent surveillance to ensure property security without noise.",
       "date": "2022-11",
       "url": "https://github.com/weisser-dev/responsive-resume-cv-react",
       "certificationId": "PB-12345"
     },
     {
       "title": "Expert in Fetching",
-      "description": "Recognized for outstanding fetching skills and never missing a ball or frisbee.",
+      "description": "Recognized for outstanding skills in fetching and never missing a ball or frisbee.",
       "date": "2023-01",
       "url": "https://github.com/weisser-dev/responsive-resume-cv-react",
       "certificationId": "EF-23345"
@@ -121,14 +82,14 @@
   ],
   "references": [
     {
-      "title": "Treat Factory Manager",
+      "title": "Head of Treat Factory",
       "name": "Luna Doe",
       "contact": {
         "phone": "+1 (555) 789-0123",
         "email": "luna@weisser.dev",
         "web": {
-          "url": "https://github.com/weisser-dev",
-          "title": "GitHub"
+          "title": "LinkedIn",
+          "url": "https://github.com/weisser-dev"
         }
       }
     }
@@ -141,6 +102,6 @@
   "interests": {
     "Coding": "bx-code-alt",
     "Coffee": "bxs-coffee-togo",
-    "Traveling": "bxs-plane-alt"
+    "Travel": "bxs-plane-alt"
   }
 }
