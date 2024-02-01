@@ -1,4 +1,6 @@
 export interface LocaleData {
+  referencesphone: string;
+  referencesemail: string;
   localizedCertId: string;
   localizedViewCert: string;
   social: string;

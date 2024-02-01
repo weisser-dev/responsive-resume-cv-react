@@ -5,7 +5,11 @@
   "contact": {
     "address": "The Cozy Kennel, Dogtown",
     "email": "balu@weisser.dev",
-    "phone": "+1 (555) 123-4567"
+    "phone": "+1 (555) 123-4567",
+    "web": {
+      "url": "https://github.com/weisser-dev",
+      "title": "GitHub"
+    }
   },
   "socialLinks": [
     {
@@ -121,7 +125,11 @@
       "name": "Luna Doe",
       "contact": {
         "phone": "+1 (555) 789-0123",
-        "email": "luna@weisser.dev"
+        "email": "luna@weisser.dev",
+        "web": {
+          "url": "https://github.com/weisser-dev",
+          "title": "GitHub"
+        }
       }
     }
   ],

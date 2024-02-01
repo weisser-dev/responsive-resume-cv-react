@@ -23,6 +23,10 @@ interface HomeProps {
     address: string;
     email: string;
     phone: string;
+    web: {
+      title: string;
+      url: string;
+    }
   };
   toggleTheme: () => void;
   generatePdf: () => void;
@@ -40,10 +44,24 @@ const Home: React.FC<HomeProps> = ({name, profession, profileImage, contact, tog
         <HomeAddress>
           <HomeInformation><HomeInformationIcon className="bx bx-map"></HomeInformationIcon> {contact.address}
           </HomeInformation>
-          <HomeInformation><HomeInformationIcon className="bx bx-envelope"></HomeInformationIcon> {contact.email}
-          </HomeInformation>
-          <HomeInformation><HomeInformationIcon className="bx bx-phone"></HomeInformationIcon> {contact.phone}
-          </HomeInformation>
+          {contact.email && (
+            <HomeInformation>
+              <HomeInformationIcon className="bx bx-envelope"></HomeInformationIcon>
+              <a href={`mailto:${contact.email}`}>{contact.email}</a>
+            </HomeInformation>
+          )}
+          {contact.phone && (
+            <HomeInformation>
+              <HomeInformationIcon className="bx bx-phone"></HomeInformationIcon>
+              <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+            </HomeInformation>
+          )}
+          {contact.web && contact.web.url && contact.web.title && (
+            <HomeInformation>
+              <HomeInformationIcon className="bx bx-link-alt"></HomeInformationIcon>
+              <a href={contact.web.url} target="_blank" rel="noopener noreferrer">{contact.web.title}</a>
+            </HomeInformation>
+          )}
         </HomeAddress>
       </HomeContainer>
       <DownloadButton className="bx bx-download" title="Download PDF" onClick={generatePdf}></DownloadButton>

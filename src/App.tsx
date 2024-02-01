@@ -50,7 +50,7 @@ function App() {
         name: '',
         profession: '',
         profileImage: '',
-        contact: {address: '', email: '', phone: ''},
+        contact: {address: '', email: '', phone: '', web: {title: '', url: ''}},
         socialLinks: [],
         profile: '',
         education: [],
@@ -160,8 +160,10 @@ function App() {
         const imgWidth = canvas.width;
         const imgHeight = canvas.height;
 
-        const widthInMm = imgWidth * 0.2645833333;
-        const heightInMm = imgHeight * 0.2645833333;
+        // Convert canvas dimensions to mm for PDF
+        const scale = 0.2645833333; // Pixel to mm conversion factor
+        const widthInMm = imgWidth * scale;
+        const heightInMm = imgHeight * scale;
 
         const pdf = new jspdf({
           orientation: imgWidth > imgHeight ? 'l' : 'p',
@@ -170,10 +172,22 @@ function App() {
         });
 
         pdf.addImage(imgData, 'PNG', 0, 0, widthInMm, heightInMm);
+
+        // Iterate over all links and add to PDF
+        areaCv.querySelectorAll('a').forEach(link => {
+          const rect = link.getBoundingClientRect();
+          const offsetX = (rect.left - areaCv.offsetLeft) * scale;
+          const offsetY = (rect.top - areaCv.offsetTop) * scale;
+          const width = rect.width * scale;
+          const height = rect.height * scale;
+
+          // Add clickable area for the link
+          pdf.link(offsetX, offsetY, width, height, {url: link.href});
+        });
+
         document.body.classList.remove('generate-pdf');
-        const filename = generateFilename(cvData.name, language);
-        pdf.save(filename);
-      })
+        pdf.save(generateFilename(cvData.name, language));
+      });
     }
   };
 
@@ -218,7 +232,8 @@ function App() {
               localizedViewCert={localeData?.localizedViewCert}
             />}
             {cvData?.references.length > 0 &&
-              <References references={cvData.references} title={localeData?.references}/>}
+              <References references={cvData.references} title={localeData?.references}
+                          email={localeData?.referencesemail} phone={localeData?.referencesphone}/>}
             {cvData?.languages && <Languages languages={cvData.languages} title={localeData?.languages}/>}
             {cvData?.interests && <Interests interests={cvData.interests} title={localeData?.interests}/>}
           </ResumeRight>

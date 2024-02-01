@@ -2,6 +2,10 @@ interface Contact {
   address: string;
   email: string;
   phone: string;
+  web: {
+    title: string,
+    url: string
+  }
 }
 
 interface SocialLink {

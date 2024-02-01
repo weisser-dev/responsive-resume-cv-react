@@ -41,6 +41,10 @@ export const HomeInformation = styled.span`
     display: flex;
     align-items: center;
     font-size: var(--smaller-font-size);
+
+    a {
+        text-decoration: none;
+    }
 `;
 
 export const HomeInformationIcon = styled.i`

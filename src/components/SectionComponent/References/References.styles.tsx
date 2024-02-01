@@ -30,4 +30,8 @@ export const ReferenceContact = styled.ul`
     list-style: none;
     padding: 0;
     font-size: var(--smaller-font-size);
+
+    a {
+        text-decoration: none;
+    }
 `;
