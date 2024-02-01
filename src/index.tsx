@@ -8,7 +8,6 @@ import './index.css';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-
       <LanguageProvider>
         <App/>
       </LanguageProvider>
