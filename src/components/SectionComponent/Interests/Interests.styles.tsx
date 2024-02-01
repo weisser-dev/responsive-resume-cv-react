@@ -15,7 +15,7 @@ export const InterestsContent = styled.div`
 
 export const InterestsIcon = styled.i`
     font-size: 1.5rem;
-    color: var(--text-color-light);
+    color: var(--text-color);
     margin-bottom: .25rem;
 `;
 
@@ -23,5 +23,3 @@ export const InterestsName = styled.span`
     font-size: var(--normal-font-size);
     color: var(--title-color);
 `;
-
-// ... You can add more styled components for other parts of the interests if needed

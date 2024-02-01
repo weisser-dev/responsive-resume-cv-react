@@ -42,12 +42,6 @@ interface Reference {
   contact: Contact;
 }
 
-export interface Skill {
-  name: string;
-  proficiency: number;
-}
-
-
 export interface CVData {
   name: string;
   profession: string;
@@ -59,7 +53,7 @@ export interface CVData {
   experience: ExperienceEntry[];
   certificates: Certificate[];
   references: Reference[];
-  skills: Skill[];
+  skills: string[];
   languages: { [key: string]: number };
   interests: { [key: string]: string };
 }
