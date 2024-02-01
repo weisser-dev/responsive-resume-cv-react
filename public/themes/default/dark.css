@@ -1,0 +1,9 @@
+/* /themes/dark.css */
+:root {
+    --title-color: #cbd5e0; /* Lighter text color for dark theme */
+    --text-color: #a0aec0; /* Softer light blue for text */
+    --text-color-light: #718096; /* Darker blue for less emphasized text */
+    --container-color: #2d3748; /* Dark gray for containers */
+    --container-color-alt: #4a5568; /* Slightly lighter gray for alternate containers */
+    --body-color: #1a202c; /* Very dark gray, almost black, for the body */
+}

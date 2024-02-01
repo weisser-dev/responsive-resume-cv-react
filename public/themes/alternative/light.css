@@ -1,0 +1,9 @@
+/* /themes/light.css */
+:root {
+    --title-color: #0b0a0a;
+    --text-color: #403a3a;
+    --text-color-light: #707070;
+    --container-color: #fafafa;
+    --container-color-alt: #f0efef;
+    --body-color: #fcfcfc;
+}

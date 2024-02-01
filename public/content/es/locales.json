@@ -1,0 +1,21 @@
+{
+  "social": "Social",
+  "profile": "Perfil",
+  "experience": "Experiencia",
+  "education": "Educación",
+  "skills": "Habilidades",
+  "certificates": "Certificados",
+  "references": "Referencias",
+  "languages": "Idiomas",
+  "interests": "Intereses",
+  "download": "Descargar",
+  "contact": {
+    "address": "Dirección",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono"
+  },
+  "themeButton": "Tema",
+  "generatePdf": "Generar PDF",
+  "localizedCertId": "ID",
+  "localizedViewCert": "Ver Certificado"
+}

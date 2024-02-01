@@ -1,0 +1,9 @@
+/* /themes/dark.css */
+:root {
+    --title-color: #F2F2F2;
+    --text-color: #BFBFBF;
+    --text-color-light: #a1a1a1;
+    --container-color: #212121;
+    --container-color-alt: #181616;
+    --body-color: #2B2B2B;
+}
