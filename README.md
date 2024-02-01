@@ -74,7 +74,7 @@ To build the static content for production, use:
 
 - `/public`: Contains the static files like themes, `index.html`, and images.
 - `/src`:
-    - `/components`: React components for each section of the resume, such as education, experience, and skills.
+    - `/components`: React components for each section of the resume, such as education, experience and so on.
     - `/hooks`: Custom React hooks, for example, `useLanguage` to manage language state.
     - `/models`: TypeScript interfaces and types defining the structure of the CV data.
     - `/utils`: Utility functions, including the local loader for loading JSON data.
