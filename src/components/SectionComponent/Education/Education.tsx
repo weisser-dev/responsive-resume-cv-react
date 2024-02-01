@@ -29,10 +29,12 @@ const Education: React.FC<EducationProps> = ({education, title}) => {
       <EducationContainer>
         {education.map((edu, index) => (
           <EducationContent key={index}>
-            <EducationTime>
-              <EducationRounder/>
-              {index < education.length - 1 && <EducationLine/>}
-            </EducationTime>
+            {education.length > 1 && (
+              <EducationTime>
+                <EducationRounder/>
+                {index < education.length - 1 && <EducationLine/>}
+              </EducationTime>
+            )}
             <EducationData>
               <EducationTitle>{edu.title}</EducationTitle>
               <EducationStudies>{edu.institution}</EducationStudies>
