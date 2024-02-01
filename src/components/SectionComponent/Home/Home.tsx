@@ -46,8 +46,8 @@ const Home: React.FC<HomeProps> = ({name, profession, profileImage, contact, tog
           </HomeInformation>
         </HomeAddress>
       </HomeContainer>
-      <ThemeButton className="bx bx-moon" title="Toggle Theme" onClick={toggleTheme}></ThemeButton>
       <DownloadButton className="bx bx-download" title="Download PDF" onClick={generatePdf}></DownloadButton>
+      <ThemeButton className="bx bx-moon" title="Toggle Theme" onClick={toggleTheme}></ThemeButton>
     </SectionComponent>
   );
 };

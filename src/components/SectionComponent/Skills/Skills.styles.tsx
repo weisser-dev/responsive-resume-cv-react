@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const SkillsContainer = styled.div`
     display: grid;
-    gap: 1rem;
+    gap: var(--mb-1);
 `;
 
 export const SkillItem = styled.div`
@@ -14,7 +14,7 @@ export const SkillItem = styled.div`
 export const SkillName = styled.span`
     font-size: var(--normal-font-size);
     color: var(--title-color);
-    margin-right: 1rem;
+    margin-right: var(--mb-2);
 `;
 
 export const ProficiencyContainer = styled.div`

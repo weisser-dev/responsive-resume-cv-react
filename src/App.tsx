@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {loadData} from "./utils/localeLoader";
 import {CVData} from './models/CVData';
-// @ts-ignore
-import html2pdf from 'html2pdf.js';
 import config from './config.json';
 import 'boxicons/css/boxicons.min.css';
 import LanguageSwitcher from "./components/LanguageSwitcher/LanguageSwitcher";
@@ -22,6 +20,8 @@ import Skills from "./components/SectionComponent/Skills/Skills";
 import ScrollTopButton from "./components/ScrollTopButton/ScrollTopButton";
 import useMobileView from "./hooks/useMobileView";
 import {MainContainer, ResumeContainer, ResumeLeft, ResumeRight} from "./App.styles";
+import html2canvas from "html2canvas";
+import jspdf from "jspdf";
 
 function App() {
   const [cvData, setCvData] = useState<CVData | null>(null);
@@ -82,9 +82,6 @@ function App() {
 
   const loadTheme = (themeName: string) => {
     let themeUrl = themeName === 'light' ? config.themes.light : config.themes.dark;
-    if (themeName === 'print') {
-      themeUrl = 'themes/print/print.css';
-    }
     const existingLink = document.querySelector('link[data-theme="true"]');
     if (existingLink) {
       document.head.removeChild(existingLink);
@@ -116,50 +113,32 @@ function App() {
     return `${currentDate}_cv_${locale}_${formattedName}.pdf`;
   };
 
-  const generateOldPdf = () => {
-    document.body.classList.add('generate-pdf');
-    const areaCv = document.getElementById('area-cv');
-    if (areaCv && cvData) {
-      const filename = generateFilename(cvData.name, language);
-      const opt = {
-        margin: 0,
-        filename,
-        image: {type: 'jpeg', quality: 0.98},
-        html2canvas: {scale: 4},
-        jsPDF: {format: 'a4', orientation: 'portrait'}
-      };
-      html2pdf().from(areaCv).set(opt).save().then(() => {
-        document.body.classList.remove('generate-pdf');
-      });
-    }
-  };
-
   const generatePdf = () => {
     const areaCv = document.getElementById('area-cv');
     if (areaCv && cvData) {
       document.body.classList.add('generate-pdf');
-      const filename = generateFilename(cvData.name, language);
-      const opt = {
-        margin: [10, 0],
-        filename,
-        image: {type: 'jpeg', quality: 0.98},
-        html2canvas: {
-          scale: 4,
-          useCORS: true,
-          logging: true,
-          backgroundColor: 'none'
-        },
-        jsPDF: {unit: 'mm', format: 'a4', orientation: 'portrait'}
-      };
-      loadTheme("print");
-      html2pdf().from(areaCv).set(opt).toPdf().get('pdf').then(function () {
-      }).save().then(() => {
+      html2canvas(areaCv, {scale: 1, useCORS: true}).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const imgWidth = canvas.width;
+        const imgHeight = canvas.height;
+
+        const widthInMm = imgWidth * 0.2645833333;
+        const heightInMm = imgHeight * 0.2645833333;
+
+        const pdf = new jspdf({
+          orientation: imgWidth > imgHeight ? 'l' : 'p',
+          unit: 'mm',
+          format: [widthInMm, heightInMm]
+        });
+
+        pdf.addImage(imgData, 'PNG', 0, 0, widthInMm, heightInMm);
         document.body.classList.remove('generate-pdf');
-        loadTheme(theme);
-      });
+        const filename = generateFilename(cvData.name, language);
+        pdf.save(filename);
+      })
     }
   };
-
+  
   if (!cvData || !localeData) {
     return <div>Loading...</div>;
   }

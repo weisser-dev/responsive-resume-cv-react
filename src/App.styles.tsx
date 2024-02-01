@@ -28,4 +28,6 @@ export const ResumeLeft = styled.div`
 
 export const ResumeRight = styled.div`
     padding: 0 var(--mb-3);
+    width: 100%;
+    height: 100%;
 `;

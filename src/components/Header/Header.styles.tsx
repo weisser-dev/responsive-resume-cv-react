@@ -58,7 +58,7 @@ export const NavLink = styled.a`
     display: flex;
     flex-direction: column;
     font-size: var(--smaller-font-size);
-    color: var(--text-color-light);
+    color: var(--text-color);
     font-weight: var(--font-medium);
 
     &:hover {

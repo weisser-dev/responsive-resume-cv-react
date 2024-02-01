@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SocialContainer = styled.div`
     display: grid;
-    gap: 1.5rem;
+    gap: var(--mb-1);
 `;
 
 export const SocialLink = styled.a`

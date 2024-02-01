@@ -12,6 +12,12 @@ export const ExperienceContent = styled.div`
 
 export const ExperienceTime = styled.div`
     padding-right: 1rem;
+    /* alternative styling
+    padding-right: 0.5rem;
+    margin-left: -1.5rem;
+    @media screen and (max-width: 967px) {
+        display: none;
+    }*/
 `;
 
 export const ExperienceRounder = styled.span`

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-    padding: 1.5rem 0;
+    padding: var(--mb-2) 0;
     position: relative;
 `;
 
@@ -10,7 +10,7 @@ export const SectionTitle = styled.h2`
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
     text-transform: uppercase;
-    letter-spacing: 0.35rem;
+    letter-spacing: 0.3rem;
     text-align: left;
-    margin-bottom: var(--mb-3);
+    margin-bottom: var(--mb-1);
 `;

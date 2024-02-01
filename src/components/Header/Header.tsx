@@ -24,6 +24,11 @@ const Header: React.FC<HeaderProps> = ({name, localeData, isMenuOpen, toggleMenu
             </NavLink>
           </NavItem>
           <NavItem>
+            <NavLink href="#social">
+              <i className='bx bx-link-alt nav_icon'></i>{localeData.social}
+            </NavLink>
+          </NavItem>
+          <NavItem>
             <NavLink href="#profile">
               <i className='bx bx-user nav_icon'></i>{localeData.profile}
             </NavLink>
@@ -51,6 +56,11 @@ const Header: React.FC<HeaderProps> = ({name, localeData, isMenuOpen, toggleMenu
           <NavItem>
             <NavLink href="#references">
               <i className='bx bx-link-external nav_icon'></i>{localeData.references}
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#languages">
+              <i className='bx bxs-plane-land nav_icon'></i>{localeData.languages}
             </NavLink>
           </NavItem>
         </NavList>

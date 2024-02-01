@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+    padding-top: var(--mb-2);
     display: flex;
     align-items: center;
     justify-content: right;
@@ -18,4 +19,8 @@ export const Select = styled.select`
     cursor: pointer;
     color: var(--text-color);
     background-color: var(--container-color);
+
+    @media screen and (max-width: 967px) {
+        background-color: var(--container-color-alt);
+    }
 `;
