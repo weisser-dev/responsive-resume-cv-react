@@ -41,9 +41,47 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
+      // Load CV data and locale data
       const cvDataResponse = await loadData<CVData>(language, 'cv');
       const localeDataResponse = await loadData<LocaleData>(language, 'locales');
-      setCvData(cvDataResponse);
+
+      // Merge with empty defaults to ensure all properties exist
+      const cvData = {
+        name: '',
+        profession: '',
+        profileImage: '',
+        contact: {address: '', email: '', phone: ''},
+        socialLinks: [],
+        profile: '',
+        education: [],
+        skills: [],
+        experience: [],
+        certificates: [],
+        references: [],
+        languages: {},
+        interests: {},
+        ...cvDataResponse // Spread operator to overwrite defaults with actual data
+      };
+
+      const localData = {
+        localizedCertId: '',
+        localizedViewCert: '',
+        social: '',
+        profile: '',
+        experience: '',
+        education: '',
+        skills: '',
+        certificates: '',
+        references: '',
+        languages: '',
+        interests: '',
+        download: '',
+        themeButton: '',
+        generatePdf: '',
+        ...localeDataResponse // Spread operator to overwrite defaults with actual data
+      };
+
+      setCvData(cvData);
       setLocaleData(localeDataResponse);
     }
 
@@ -138,40 +176,51 @@ function App() {
       })
     }
   };
-  
+
   if (!cvData || !localeData) {
     return <div>Loading...</div>;
   }
 
   return (
     <div>
-      <Header name={cvData.name} localeData={localeData} isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
+      <Header
+        name={cvData?.name}
+        localeData={localeData}
+        isMenuOpen={isMenuOpen}
+        toggleMenu={toggleMenu}
+      />
       <MainContainer>
         <ResumeContainer id="area-cv">
           <ResumeLeft>
-            {isMobileView && (
-              <LanguageSwitcher/>)}
-            <Home name={cvData.name.toUpperCase()} profession={cvData.profession} profileImage={cvData.profileImage}
-                  contact={cvData.contact} toggleTheme={toggleTheme} generatePdf={generatePdf}/>
-            <SocialLinks socialLinks={cvData.socialLinks} title={localeData.social}/>
-            <Profile title={localeData.profile} description={cvData.profile}/>
-            <Education education={cvData.education} title={localeData.education}/>
-            <Skills skills={cvData.skills} title={localeData.skills}/>
+            {isMobileView && <LanguageSwitcher/>}
+            {cvData && <Home
+              name={cvData.name.toUpperCase()}
+              profession={cvData.profession}
+              profileImage={cvData.profileImage}
+              contact={cvData.contact}
+              toggleTheme={toggleTheme}
+              generatePdf={generatePdf}
+            />}
+            {cvData?.socialLinks && <SocialLinks socialLinks={cvData.socialLinks} title={localeData?.social}/>}
+            {cvData?.profile && <Profile title={localeData?.profile} description={cvData.profile}/>}
+            {cvData?.education.length > 0 && <Education education={cvData.education} title={localeData?.education}/>}
+            {cvData?.skills.length > 0 && <Skills skills={cvData.skills} title={localeData?.skills}/>}
           </ResumeLeft>
 
           <ResumeRight>
-            {!isMobileView && (
-              <LanguageSwitcher/>)}
-            <Experience experience={cvData.experience} title={localeData.experience}/>
-            <Certificates
+            {!isMobileView && <LanguageSwitcher/>}
+            {cvData?.experience.length > 0 &&
+              <Experience experience={cvData.experience} title={localeData?.experience}/>}
+            {cvData?.certificates.length > 0 && <Certificates
               certificates={cvData.certificates}
-              title={localeData.certificates}
-              localizedCertId={localeData.localizedCertId}
-              localizedViewCert={localeData.localizedViewCert}
-            />
-            <References references={cvData.references} title={localeData.references}/>
-            <Languages languages={cvData.languages} title={localeData.languages}/>
-            <Interests interests={cvData.interests} title={localeData.interests}/>
+              title={localeData?.certificates}
+              localizedCertId={localeData?.localizedCertId}
+              localizedViewCert={localeData?.localizedViewCert}
+            />}
+            {cvData?.references.length > 0 &&
+              <References references={cvData.references} title={localeData?.references}/>}
+            {cvData?.languages && <Languages languages={cvData.languages} title={localeData?.languages}/>}
+            {cvData?.interests && <Interests interests={cvData.interests} title={localeData?.interests}/>}
           </ResumeRight>
         </ResumeContainer>
       </MainContainer>
