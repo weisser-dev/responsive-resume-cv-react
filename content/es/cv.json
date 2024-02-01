@@ -94,6 +94,20 @@
       }
     }
   ],
+  "skills": [
+    "Recoger",
+    "Correr",
+    "Saltar",
+    "Oler",
+    "Ladrar",
+    "Nadar",
+    "Acariciar",
+    "Jugar",
+    "Obediencia",
+    "Premios",
+    "Correr rápido",
+    "Buscar agua"
+  ],
   "languages": {
     "Ladrido": 80,
     "Aullido": 60,

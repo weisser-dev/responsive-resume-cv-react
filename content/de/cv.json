@@ -94,6 +94,20 @@
       }
     }
   ],
+  "skills": [
+    "Apportieren",
+    "Laufen",
+    "Springen",
+    "Schnüffeln",
+    "Bellen",
+    "Schwimmen",
+    "Kuscheln",
+    "Spielen",
+    "Gehorsam",
+    "Leckerlis",
+    "Schnell rennen",
+    "Wasser holen"
+  ],
   "languages": {
     "Bellen": 80,
     "Heulen": 60,

@@ -94,6 +94,20 @@
       }
     }
   ],
+  "skills": [
+    "Fetching",
+    "Running",
+    "Jumping",
+    "Sniffing",
+    "Barking",
+    "Swimming",
+    "Cuddling",
+    "Playing",
+    "Obedience",
+    "Treats",
+    "Fast running",
+    "Fetching water"
+  ],
   "languages": {
     "Barking": 80,
     "Howling": 60,
