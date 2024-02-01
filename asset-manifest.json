@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "https://weisser-dev.github.io/responsive-resume-cv-react/static/css/main.ba47dd40.css",
-    "main.js": "https://weisser-dev.github.io/responsive-resume-cv-react/static/js/main.0f4495b2.js",
+    "main.js": "https://weisser-dev.github.io/responsive-resume-cv-react/static/js/main.c2b912c1.js",
     "static/js/703.e9b255b1.chunk.js": "https://weisser-dev.github.io/responsive-resume-cv-react/static/js/703.e9b255b1.chunk.js",
     "static/js/379.20da1bf4.chunk.js": "https://weisser-dev.github.io/responsive-resume-cv-react/static/js/379.20da1bf4.chunk.js",
     "static/media/boxicons.svg": "https://weisser-dev.github.io/responsive-resume-cv-react/static/media/boxicons.9e2b21b135bc7d4c803f.svg",
@@ -11,12 +11,12 @@
     "static/media/boxicons.woff2": "https://weisser-dev.github.io/responsive-resume-cv-react/static/media/boxicons.df635aaf04cd75132f62.woff2",
     "index.html": "https://weisser-dev.github.io/responsive-resume-cv-react/index.html",
     "main.ba47dd40.css.map": "https://weisser-dev.github.io/responsive-resume-cv-react/static/css/main.ba47dd40.css.map",
-    "main.0f4495b2.js.map": "https://weisser-dev.github.io/responsive-resume-cv-react/static/js/main.0f4495b2.js.map",
+    "main.c2b912c1.js.map": "https://weisser-dev.github.io/responsive-resume-cv-react/static/js/main.c2b912c1.js.map",
     "703.e9b255b1.chunk.js.map": "https://weisser-dev.github.io/responsive-resume-cv-react/static/js/703.e9b255b1.chunk.js.map",
     "379.20da1bf4.chunk.js.map": "https://weisser-dev.github.io/responsive-resume-cv-react/static/js/379.20da1bf4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ba47dd40.css",
-    "static/js/main.0f4495b2.js"
+    "static/js/main.c2b912c1.js"
   ]
 }
