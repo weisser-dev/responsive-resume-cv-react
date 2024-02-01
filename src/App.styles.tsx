@@ -7,6 +7,7 @@ export const MainContainer = styled.main`
     @media screen and (min-width: 968px) {
         margin: 0 auto;
         margin-top: var(--mb-3);
+        box-shadow: 0 0 8px rgba(13, 12, 12, .15);
     }
 `;
 
@@ -17,7 +18,6 @@ export const ResumeContainer = styled.div`
     @media screen and (min-width: 968px) {
         grid-template-columns: .5fr 1fr;
         background-color: var(--container-color);
-        box-shadow: 0 0 8px rgba(13, 12, 12, .15);
     }
 `;
 
