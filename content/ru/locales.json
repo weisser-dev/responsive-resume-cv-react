@@ -1,0 +1,21 @@
+{
+  "social": "Социальные сети",
+  "profile": "Профиль",
+  "experience": "Опыт работы",
+  "education": "Образование",
+  "skills": "Навыки",
+  "certificates": "Сертификаты",
+  "references": "Рекомендации",
+  "languages": "Языки",
+  "interests": "Интересы",
+  "download": "Скачать",
+  "contact": {
+    "address": "Адрес",
+    "email": "Электронная почта",
+    "phone": "Телефон"
+  },
+  "themeButton": "Тема",
+  "generatePdf": "Создать PDF",
+  "localizedCertId": "ID",
+  "localizedViewCert": "Просмотреть сертификат"
+}

@@ -1,0 +1,138 @@
+{
+  "name": "Balu",
+  "profession": "Gerente de Buenas Vibras",
+  "profileImage": "assets/images/profile.jpg",
+  "contact": {
+    "address": "The Cozy Kennel, Dogtown",
+    "email": "balu@weisser.dev",
+    "phone": "+1 (555) 123-4567"
+  },
+  "socialLinks": [
+    {
+      "name": "Dogster",
+      "url": "https://github.com/weisser-dev/responsive-resume-cv-react"
+    },
+    {
+      "name": "Pawbook",
+      "url": "https://github.com/weisser-dev/responsive-resume-cv-react"
+    }
+  ],
+  "profile": "Un entusiasta de los paseos largos y las golosinas abundantes, dedicado a difundir alegría y relajación. Con varios años de experiencia en mover la cola y perseguir la pelota, comprendo cómo llevar comodidad y felicidad al entorno.",
+  "education": [
+    {
+      "title": "Negociaciones Avanzadas de Golosinas",
+      "institution": "Universidad Canina",
+      "year": "2019 - 2020"
+    },
+    {
+      "title": "Licenciado en Caricias en la Barriga",
+      "institution": "Liga de Cachorros de Élite",
+      "year": "2018 - 2019"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Recuperación",
+      "proficiency": 1
+    },
+    {
+      "name": "Dormir",
+      "proficiency": 5
+    },
+    {
+      "name": "Actuación de Trucos",
+      "proficiency": 1
+    },
+    {
+      "name": "Apoyo Emocional",
+      "proficiency": 5
+    },
+    {
+      "name": "Ladrar",
+      "proficiency": 2
+    },
+    {
+      "name": "Comer",
+      "proficiency": 5
+    },
+    {
+      "name": "Excavar",
+      "proficiency": 3
+    },
+    {
+      "name": "Acurrucarse",
+      "proficiency": 5
+    },
+    {
+      "name": "Jugar a Atrapar",
+      "proficiency": 4
+    },
+    {
+      "name": "Guardia",
+      "proficiency": 1
+    },
+    {
+      "name": "Olfatear",
+      "proficiency": 5
+    }
+  ],
+  "experience": [
+    {
+      "title": "Gerente de Buenas Vibras Junior",
+      "company": "Happy Paws",
+      "period": "2017 - 2019",
+      "description": "Responsable de recibir a los visitantes con ladridos alegres y asegurar niveles óptimos de felicidad en las instalaciones.",
+      "url": "https://github.com/weisser-dev/responsive-resume-cv-react"
+    },
+    {
+      "title": "Oficial Principal de Abrazos",
+      "company": "Bark and Snuggle",
+      "period": "2014 - 2017",
+      "description": "Proporcionaba servicios esenciales de abrazos a los clientes para mejorar su bienestar emocional y niveles de estrés.",
+      "url": "https://github.com/weisser-dev/responsive-resume-cv-react"
+    }
+  ],
+  "certificates": [
+    {
+      "title": "Experto Certificado en Abrazos",
+      "description": "Graduado de la Escuela de Buen Perro con honores, especializado en imitar un peluche.",
+      "date": "2021-06",
+      "url": "https://github.com/weisser-dev/responsive-resume-cv-react",
+      "certificationId": "GB-12345"
+    },
+    {
+      "title": "Maestro Profesional de Ladridos",
+      "description": "Certificado en técnicas avanzadas de ladridos y vigilancia silenciosa para garantizar la seguridad de la propiedad sin ruido.",
+      "date": "2022-11",
+      "url": "https://github.com/weisser-dev/responsive-resume-cv-react",
+      "certificationId": "PB-12345"
+    },
+    {
+      "title": "Experto en Recuperación",
+      "description": "Reconocido por habilidades sobresalientes en la recuperación y nunca perder una pelota o un frisbee.",
+      "date": "2023-01",
+      "url": "https://github.com/weisser-dev/responsive-resume-cv-react",
+      "certificationId": "EF-23345"
+    }
+  ],
+  "references": [
+    {
+      "title": "Gerente de la Fábrica de Golosinas",
+      "name": "Luna Doe",
+      "contact": {
+        "phone": "+1 (555) 789-0123",
+        "email": "luna@weisser.dev"
+      }
+    }
+  ],
+  "languages": {
+    "Ladrar": 80,
+    "Aullar": 60,
+    "Quejarse": 20
+  },
+  "interests": {
+    "Programación": "bx-code-alt",
+    "Café": "bxs-coffee-togo",
+    "Viajar": "bxs-plane-alt"
+  }
+}

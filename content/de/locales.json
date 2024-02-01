@@ -1,0 +1,16 @@
+{
+  "social": "Links",
+  "profile": "Profil",
+  "experience": "Werdegang",
+  "education": "Ausbildung",
+  "skills": "Skills",
+  "certificates": "Zertifikate",
+  "references": "Referenzen",
+  "languages": "Sprachen",
+  "interests": "Hobbys & Interessen",
+  "download": "Download",
+  "themeButton": "Theme",
+  "generatePdf": "PDF Download",
+  "localizedCertId": "ID",
+  "localizedViewCert": "Link zum Zertifikat"
+}

@@ -1,0 +1,9 @@
+/* /themes/print.css */
+:root {
+    --title-color: #1a202c; /* Slightly darker for better contrast */
+    --text-color: #4a5568; /* Grayish-blue for regular text */
+    --text-color-light: #a0aec0; /* Lighter grayish-blue for less emphasis */
+    --container-color: #ffffff; /* Pure white for container backgrounds */
+    --container-color-alt: #edf2f7; /* Light gray for alternate containers */
+    --body-color: #f7fafc; /* Very light gray, almost white, for the body */
+}
