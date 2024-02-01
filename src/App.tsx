@@ -83,7 +83,7 @@ function App() {
   const loadTheme = (themeName: string) => {
     let themeUrl = themeName === 'light' ? config.themes.light : config.themes.dark;
     if (themeName === 'print') {
-      themeUrl = '/themes/print/print.css';
+      themeUrl = 'themes/print/print.css';
     }
     const existingLink = document.querySelector('link[data-theme="true"]');
     if (existingLink) {
@@ -92,8 +92,6 @@ function App() {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = themeUrl;
-    console.log(themeUrl);
-    console.log(themeUrl);
     link.dataset.theme = 'true';
     document.head.appendChild(link);
   };

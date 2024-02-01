@@ -6,8 +6,8 @@
     "ru"
   ],
   "themes": {
-    "light": "/themes/default/light.css",
-    "dark": "/themes/default/dark.css"
+    "light": "themes/default/light.css",
+    "dark": "themes/default/dark.css"
   },
   "defaultTheme": "auto"
 }

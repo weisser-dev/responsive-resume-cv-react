@@ -22,10 +22,7 @@ jobs:
 
       - name: Build project
         run: |
-          if [ -z "${{ env.PUBLIC_URL }}" ]; then
-            PUBLIC_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-            echo "PUBLIC_URL=$PUBLIC_URL" >> $GITHUB_ENV
-          fi
+          
           npm run build
         env:
           CI: false
