@@ -21,6 +21,7 @@ import useMobileView from "./hooks/useMobileView";
 import {MainContainer, ResumeContainer, ResumeLeft, ResumeRight} from "./App.styles";
 import html2canvas from "html2canvas";
 import jspdf from "jspdf";
+import Skills from "./components/SectionComponent/Skills/Skills";
 
 function App() {
   const [cvData, setCvData] = useState<CVData | null>(null);
@@ -56,6 +57,7 @@ function App() {
         experience: [],
         certificates: [],
         references: [],
+        skills: [],
         languages: {},
         interests: {},
         ...cvDataResponse // Spread operator to overwrite defaults with actual data
@@ -74,6 +76,7 @@ function App() {
         interests: '',
         download: '',
         themeButton: '',
+        skills: '',
         generatePdf: '',
         ...localeDataResponse // Spread operator to overwrite defaults with actual data
       };
@@ -216,10 +219,12 @@ function App() {
             {cvData?.profile && <Profile title={localeData?.profile} description={cvData.profile}/>}
             {cvData?.education.length > 0 && <Education education={cvData.education} title={localeData?.education}/>}
             {cvData?.languages && <Languages languages={cvData.languages} title={localeData?.languages}/>}
+            {cvData?.interests && <Interests interests={cvData.interests} title={localeData?.interests}/>}
           </ResumeLeft>
 
           <ResumeRight>
             {!isMobileView && <LanguageSwitcher/>}
+            {cvData?.skills.length > 0 && <Skills skills={cvData.skills} title={localeData?.skills}/>}
             {cvData?.experience.length > 0 &&
               <Experience experience={cvData.experience} title={localeData?.experience}/>}
             {cvData?.certificates.length > 0 && <Certificates
@@ -231,7 +236,6 @@ function App() {
             {cvData?.references.length > 0 &&
               <References references={cvData.references} title={localeData?.references}
                           email={localeData?.referencesemail} phone={localeData?.referencesphone}/>}
-            {cvData?.interests && <Interests interests={cvData.interests} title={localeData?.interests}/>}
           </ResumeRight>
         </ResumeContainer>
       </MainContainer>

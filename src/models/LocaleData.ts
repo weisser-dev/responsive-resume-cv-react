@@ -4,6 +4,7 @@ export interface LocaleData {
   localizedCertId: string;
   localizedViewCert: string;
   social: string;
+  skills: string;
   profile: string;
   experience: string;
   education: string;
