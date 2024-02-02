@@ -23,6 +23,7 @@ interface ExperienceEntry {
   title: string;
   company: string;
   period: string;
+  shortDescription: string;
   description: string;
   url: string;
   skills?: string[]; // Optional skills array

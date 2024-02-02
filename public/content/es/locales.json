@@ -19,5 +19,7 @@
   "themeButton": "Tema",
   "generatePdf": "Generar PDF",
   "localizedCertId": "ID",
-  "localizedViewCert": "Ver Certificado"
+  "localizedViewCert": "Ver Certificado",
+  "readMore": "Read More",
+  "readLess": "Read Less"
 }

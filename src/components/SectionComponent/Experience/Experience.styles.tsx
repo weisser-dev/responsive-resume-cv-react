@@ -73,3 +73,24 @@ export const SkillBubble = styled.span`
     font-size: var(--smaller-font-size);
     white-space: nowrap; // Prevents the skill text from wrapping
 `;
+
+export const ReadMoreButton = styled.span`
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    margin-top: -2px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: var(--smaller-font-size);
+    display: block;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    .generate-pdf & {
+        display: none;
+    }
+`;

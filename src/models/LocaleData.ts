@@ -15,4 +15,6 @@ export interface LocaleData {
   download: string;
   themeButton: string;
   generatePdf: string;
+  readMore: string;
+  readLess: string;
 }

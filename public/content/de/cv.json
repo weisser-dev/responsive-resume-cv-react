@@ -53,6 +53,7 @@
       "title": "Chef-Kuschelbeauftragter",
       "company": "Bark and Snuggle",
       "period": "2014 - 2017",
+      "shortDescription": "Kurzbeschreibungen sind jetzt auch möglich!",
       "description": "Bereitstellung wesentlicher Kuscheldienste für Kunden zur Verbesserung <br>ihres emotionalen Wohlbefindens und Stresspegels.",
       "url": "https://github.com/weisser-dev/responsive-resume-cv-react"
     }

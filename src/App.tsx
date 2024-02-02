@@ -27,10 +27,8 @@ function App() {
   const [cvData, setCvData] = useState<CVData | null>(null);
   const [localeData, setLocaleData] = useState<LocaleData | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeSection, setActiveSection] = useState('');
   const [showScrollTop, setShowScrollTop] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const {language, setLanguage} = useLanguage();
   const isMobileView = useMobileView();
   const [theme, setTheme] = useState(() => {
@@ -210,7 +208,8 @@ function App() {
             {!isMobileView && <LanguageSwitcher/>}
             {cvData?.skills.length > 0 && <Skills skills={cvData.skills} title={localeData?.skills}/>}
             {cvData?.experience.length > 0 &&
-              <Experience experience={cvData.experience} title={localeData?.experience}/>}
+              <Experience experience={cvData.experience} title={localeData?.experience} readMore={localeData?.readMore}
+                          readLess={localeData?.readLess}/>}
             {cvData?.certificates.length > 0 && <Certificates
               certificates={cvData.certificates}
               title={localeData?.certificates}
