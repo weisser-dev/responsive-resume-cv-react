@@ -39,7 +39,7 @@
       "title": "Junior FeelGood Manager",
       "company": "Happy Paws",
       "period": "2017 - 2019",
-      "description": "Responsible for welcoming visitors with joyful barking and ensuring optimal happiness levels in the facility.",
+      "description": "Responsible for welcoming visitors with joyful barking<br>now support for line breaks\r\n and ensuring optimal happiness levels in the facility.",
       "url": "https://github.com/weisser-dev/responsive-resume-cv-react",
       "skills": [
         "barking",

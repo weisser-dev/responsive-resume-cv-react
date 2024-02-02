@@ -39,7 +39,7 @@
       "title": "Gerente de Bienestar Junior",
       "company": "Happy Paws",
       "period": "2017 - 2019",
-      "description": "Responsable de dar la bienvenida a los visitantes con ladridos alegres y garantizar niveles óptimos de felicidad en las instalaciones.",
+      "description": "Responsable de dar la bienvenida a los visitantes con ladridos \r\nalegres y garantizar niveles óptimos de felicidad en las instalaciones.",
       "url": "https://github.com/weisser-dev/responsive-resume-cv-react",
       "skills": [
         "ladrido",
@@ -53,7 +53,7 @@
       "title": "Oficial Principal de Abrazos",
       "company": "Ladrido y Mimos",
       "period": "2014 - 2017",
-      "description": "Proporcionar servicios de abrazo esenciales a los clientes para mejorar su bienestar emocional y nivel de estrés.",
+      "description": "Proporcionar servicios de abrazo esenciales a los clientes para<br> mejorar su bienestar emocional y nivel de estrés.",
       "url": "https://github.com/weisser-dev/responsive-resume-cv-react"
     }
   ],
