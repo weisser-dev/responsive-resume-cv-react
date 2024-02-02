@@ -2,6 +2,7 @@
 import React from 'react';
 import {ProfileDescription} from './Profile.styles';
 import SectionComponent from "../SectionComponent";
+import FormattedText from "../../FormattedText/FormattedText";
 
 interface ProfileProps {
   title: string;
@@ -11,7 +12,9 @@ interface ProfileProps {
 const Profile: React.FC<ProfileProps> = ({title, description}) => {
   return (
     <SectionComponent title={title} sectionId={"profile"}>
-      <ProfileDescription>{description}</ProfileDescription>
+      <ProfileDescription>
+        <FormattedText text={description}/>
+      </ProfileDescription>
     </SectionComponent>
   );
 };

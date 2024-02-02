@@ -1,11 +1,11 @@
 import React from 'react';
 import SectionComponent from "../SectionComponent";
+import FormattedText from "../../FormattedText/FormattedText";
 import {
   ExperienceCompany,
   ExperienceContainer,
   ExperienceContent,
   ExperienceData,
-  ExperienceDescription,
   ExperienceLine,
   ExperiencePeriod,
   ExperienceRounder,
@@ -43,9 +43,9 @@ const Experience: React.FC<ExperienceProps> = ({experience, title}) => {
               <ExperienceTitle>{exp.title}</ExperienceTitle>
               <ExperiencePeriod>{exp.period}</ExperiencePeriod> |
               <a href={exp.url} target="_blank" rel="noopener noreferrer">
-                <ExperienceCompany> {exp.company}</ExperienceCompany>
+                <ExperienceCompany>{exp.company}</ExperienceCompany>
               </a>
-              <ExperienceDescription>{exp.description}</ExperienceDescription>
+              <FormattedText text={exp.description}/>
               {exp.skills && ( // Conditionally render the SkillsContainer if skills are available
                 <SkillsContainer>
                   {exp.skills.map((skill, i) => (
@@ -60,5 +60,4 @@ const Experience: React.FC<ExperienceProps> = ({experience, title}) => {
     </SectionComponent>
   );
 };
-
 export default Experience;

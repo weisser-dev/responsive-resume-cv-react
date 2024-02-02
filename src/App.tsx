@@ -27,8 +27,10 @@ function App() {
   const [cvData, setCvData] = useState<CVData | null>(null);
   const [localeData, setLocaleData] = useState<LocaleData | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeSection, setActiveSection] = useState('');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const {language, setLanguage} = useLanguage();
   const isMobileView = useMobileView();
   const [theme, setTheme] = useState(() => {
@@ -61,24 +63,6 @@ function App() {
         languages: {},
         interests: {},
         ...cvDataResponse // Spread operator to overwrite defaults with actual data
-      };
-
-      const localData = {
-        localizedCertId: '',
-        localizedViewCert: '',
-        social: '',
-        profile: '',
-        experience: '',
-        education: '',
-        certificates: '',
-        references: '',
-        languages: '',
-        interests: '',
-        download: '',
-        themeButton: '',
-        skills: '',
-        generatePdf: '',
-        ...localeDataResponse // Spread operator to overwrite defaults with actual data
       };
 
       setCvData(cvData);

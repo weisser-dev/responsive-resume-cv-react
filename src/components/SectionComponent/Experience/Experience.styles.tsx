@@ -50,14 +50,12 @@ export const ExperienceTitle = styled.h3`
 export const ExperienceCompany = styled.span`
     font-size: var(--small-font-size);
     color: var(--title-color);
+    margin-left: 5px;
 `;
 
 export const ExperiencePeriod = styled.span`
     font-size: var(--smaller-font-size);
-`;
-
-export const ExperienceDescription = styled.p`
-    margin-top: 5px;
+    margin-right: 5px;
 `;
 
 export const SkillsContainer = styled.div`
