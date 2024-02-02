@@ -14,5 +14,7 @@
   "themeButton": "Theme",
   "generatePdf": "PDF Download",
   "localizedCertId": "ID",
-  "localizedViewCert": "Link zum Zertifikat"
+  "localizedViewCert": "Link zum Zertifikat",
+  "readMore": "Mehr Informationen",
+  "readLess": "Ausblenden"
 }
