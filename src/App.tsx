@@ -22,6 +22,7 @@ import {MainContainer, ResumeContainer, ResumeLeft, ResumeRight} from "./App.sty
 import html2canvas from "html2canvas";
 import jspdf from "jspdf";
 import Skills from "./components/SectionComponent/Skills/Skills";
+import Loader from "./components/Loader/Loader";
 
 function App() {
   const [cvData, setCvData] = useState<CVData | null>(null);
@@ -174,7 +175,11 @@ function App() {
   };
 
   if (!cvData || !localeData) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        <Loader/>
+      </>
+    );
   }
 
   return (
