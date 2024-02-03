@@ -169,6 +169,13 @@ function App() {
     link.href = themeUrl;
     link.dataset.theme = 'true';
     document.head.appendChild(link);
+    // safari magic
+    const metaThemeColor = document.querySelector('meta[name=theme-color]');
+    const rootStyle = getComputedStyle(document.documentElement);
+    const themeColor = rootStyle.getPropertyValue('--body-color').trim();
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute("content", themeColor);
+    }
   };
 
   const toggleTheme = () => {
