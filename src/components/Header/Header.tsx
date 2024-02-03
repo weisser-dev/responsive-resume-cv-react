@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({localeData, isMenuOpen, toggleMenu, cvDa
                 <i className='bx bxs-contact nav_icon'></i>{localeData.references}
               </NavLink>
             </NavItem>}
-          {cvData?.references.length > 0 &&
+          {cvData?.skills.length > 0 &&
             <NavItem>
               <NavLink href="#skills">
                 <i className='bx bx-line-chart nav_icon'></i>{localeData.references}
