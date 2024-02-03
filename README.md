@@ -1,7 +1,6 @@
 # Multilingual Resume Web App
 
-![Web Version](web.png)
-![Mobile Version](mob.png)
+![Project](project.png)
 
 This project is a modern, responsive, and multilingual resume web application built with React. It is designed to be
 highly configurable through simple JSON files and supports automatic theme detection, manual theme selection, and
@@ -14,7 +13,7 @@ dynamic content loading based on language preference.
 - [Configuration](#configuration)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
-- [Save as PDF / Print](#save-as-pdf-print)
+- [Save as PDF / Print](#save-as-pdf--print)
 - [Credits](#credits)
 - [Open Source](#open-source)
 - [Note](#note)
