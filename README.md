@@ -14,6 +14,7 @@ dynamic content loading based on language preference.
 - [Configuration](#configuration)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
+- [Save as PDF / Print](#save-as-pdf-print)
 - [Credits](#credits)
 - [Open Source](#open-source)
 - [Note](#note)
@@ -87,6 +88,64 @@ To build the static content for production, use:
 
 The project is structured to promote ease of maintenance, scalability, and separation of concerns. Each part of the
 resume is a component that can be individually customized or replaced as needed.
+
+## Save as PDF / Print
+
+For printing, some parts of the application utilize media print queries to apply specific styles suitable for print. The
+print functionality is recommended over the PDF generation function for a few reasons:
+
+1. **Text Searchability**: When using the print function and saving as a PDF, the result is a searchable text document.
+   This is not the case with the screenshot-to-PDF method, which results in an image-based PDF where text cannot be
+   searched or selected.
+
+2. **File Size**: The print-to-PDF method generally produces a much smaller file compared to the screenshot method.
+
+3. **Mobile Compatibility**: The print method works on mobile devices, allowing users to print directly from their
+   mobile browsers.
+
+4. **Faster and Simpler**: It avoids the overhead of generating an image from the canvas and then converting it to a
+   PDF.
+
+Here’s how the print functionality is implemented:
+
+jsxCopy code
+
+`const printAction = () => {
+// Set print mode and load print theme
+setIsPrintMode(true);
+loadTheme("print");
+
+// Wait for the theme to load, then trigger the print
+setTimeout(() => {
+window.print();
+
+    // Reset to the previous theme and print mode after printing
+    setTimeout(() => {
+      setIsPrintMode(false);
+      loadTheme(theme);
+    }, 100);
+
+}, 100);
+};`
+
+For PDF generation, the application uses `html2canvas` to take a screenshot of the relevant area and then `jspdf` to
+create a PDF:
+
+javascriptCopy code
+
+`const generatePdf = () => {
+const areaCv = document.getElementById('area-cv');
+if (areaCv && cvData) {
+document.body.classList.add('generate-pdf');
+html2canvas(areaCv, {scale: 1, useCORS: true}).then(canvas => {
+// PDF generation logic...
+});
+}
+};`
+
+The resulting PDF from `generatePdf` is image-based and typically much larger in file size than the print-to-PDF
+version. Therefore, while both functionalities are available, users are advised to utilize the print option for a better
+experience, especially when looking to save the document as a PDF for sharing or storage purposes.
 
 ## Credits
 
