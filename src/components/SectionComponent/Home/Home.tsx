@@ -77,7 +77,8 @@ const Home: React.FC<HomeProps> = ({
       </HomeContainer>
       <DownloadButton className="bx bx-download" title="Download Page as Styled PDF"
                       onClick={generatePdf}></DownloadButton>
-      <PrintButton className="bx bx-printer" title="Print / Save as optimized PDF" onClick={printAction}></PrintButton>
+      <PrintButton className="bx bx-printer" title="Print / Save as optimized PDF" onClick={printAction}
+                   onTouchStart={printAction}></PrintButton>
       <ThemeButton className="bx bx-moon" title="Toggle Theme" onClick={toggleTheme}></ThemeButton>
     </SectionComponent>
   );

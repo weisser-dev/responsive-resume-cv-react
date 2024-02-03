@@ -102,7 +102,7 @@ export const PrintButton = styled.i`
     @media screen and (max-width: 967px) {
         &:before {
             position: absolute;
-            top: -2.9rem;
+            top: -42px;
             right: 3rem;
         }
     }
@@ -129,7 +129,7 @@ export const ThemeButton = styled.i`
     }
 
     @media screen and (max-width: 967px) {
-        top: -1.67rem;
+        top: -21px;
         left: 0;
     }
 
