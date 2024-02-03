@@ -1,4 +1,4 @@
-// src/components/Home/Home.styles.tsx
+// src/components/HomePrint/HomePrint.styles.tsx
 
 import styled from 'styled-components';
 
@@ -35,6 +35,13 @@ export const HomeProfession = styled.h3`
 export const HomeAddress = styled.div`
     display: grid;
     gap: 0.5rem;
+    @media print {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: -20px;
+    }
 `;
 
 export const HomeInformation = styled.span`
@@ -72,6 +79,41 @@ export const DownloadButton = styled.i`
     .generate-pdf & {
         display: none;
     }
+
+    @media print {
+        display: none;
+    }
+`;
+
+export const PrintButton = styled.i`
+    position: absolute;
+    right: 2.75rem;
+    top: 1.3rem;
+    display: flex;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--text-color-light);
+    }
+
+
+    @media screen and (max-width: 967px) {
+        &:before {
+            position: absolute;
+            top: -2.9rem;
+            right: 3rem;
+        }
+    }
+
+    .generate-pdf & {
+        display: none;
+    }
+
+    @media print {
+        display: none;
+    }
 `;
 
 export const ThemeButton = styled.i`
@@ -92,6 +134,10 @@ export const ThemeButton = styled.i`
     }
 
     .generate-pdf & {
+        display: none;
+    }
+
+    @media print {
         display: none;
     }
 `;

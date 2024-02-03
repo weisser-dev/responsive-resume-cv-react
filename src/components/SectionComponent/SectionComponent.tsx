@@ -1,5 +1,5 @@
 import React from 'react';
-import {Section, SectionTitle} from './SectionComponent.styles';
+import {Section, SectionTitle, SectionTitleWrapper, SectionWrapper} from './SectionComponent.styles';
 
 interface SectionComponentProps {
   title: string;
@@ -10,10 +10,13 @@ interface SectionComponentProps {
 const SectionComponent: React.FC<SectionComponentProps> = ({title, sectionId, children}) => {
   return (
     <Section>
-      <SectionTitle id={sectionId}>{title}</SectionTitle>
-      {children}
+      <SectionTitleWrapper>
+        <SectionTitle id={sectionId}>{title}</SectionTitle>
+      </SectionTitleWrapper>
+      <SectionWrapper>
+        {children}
+      </SectionWrapper>
     </Section>
   );
 };
-
 export default SectionComponent;

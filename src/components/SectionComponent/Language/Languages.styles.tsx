@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 
-export const LanguagesSection = styled.section`
-    padding: 1.5rem 0;
-    text-align: center;
-`;
-
 export const LanguageItem = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
     padding: 0 1rem;
+    @media print {
+        padding: 0;
+    }
 `;
 
 export const LanguageName = styled.span`
@@ -36,5 +34,18 @@ export const LanguageProficiencyBar = styled.div<{ proficiency: number }>`
         height: 100%;
         background-color: var(--text-color-light); // Change the color based on your theme
         transition: width 0.3s ease-in-out;
+    }
+
+    @media print {
+        width: 78%;
+        background-color: #eee;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+        margin-right: 80px;
+        border-radius: 2px;
+
+        &:before {
+            background-color: #3d3d3d;
+        }
     }
 `;

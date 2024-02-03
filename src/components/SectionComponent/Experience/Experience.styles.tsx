@@ -18,6 +18,9 @@ export const ExperienceTime = styled.div`
     @media screen and (max-width: 967px) {
         display: none;
     }*/
+    @media print {
+        display: none;
+    }
 `;
 
 export const ExperienceRounder = styled.span`
@@ -28,6 +31,10 @@ export const ExperienceRounder = styled.span`
     background-color: var(--text-color-light);
     border-radius: 50%;
     margin-top: 0.25rem;
+
+    @media print {
+        display: none;
+    }
 `;
 
 export const ExperienceLine = styled.span`
@@ -51,6 +58,12 @@ export const ExperienceCompany = styled.span`
     font-size: var(--small-font-size);
     color: var(--title-color);
     margin-left: 5px;
+    @media print {
+        a {
+            text-decoration: none;
+        }
+
+    }
 `;
 
 export const ExperiencePeriod = styled.span`
@@ -63,6 +76,9 @@ export const SkillsContainer = styled.div`
     flex-wrap: wrap;
     gap: 5px;
     margin-top: 10px;
+    @media print {
+        display: none;
+    }
 `;
 
 export const SkillBubble = styled.span`
@@ -91,6 +107,10 @@ export const ReadMoreButton = styled.span`
     }
 
     .generate-pdf & {
+        display: none;
+    }
+
+    @media print {
         display: none;
     }
 `;

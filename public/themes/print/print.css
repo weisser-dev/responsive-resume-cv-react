@@ -1,0 +1,25 @@
+/* /themes/print.css */
+:root {
+    --title-color: #000; /* Slightly darker for better contrast */
+    --text-color: #3d3d3d; /* Grayish-blue for regular text */
+    --text-color-light: #7a7a7a; /* Lighter grayish-blue for less emphasis */
+    --container-color: #ffffff; /* Pure white for container backgrounds */
+    --container-color-alt: #ffffff; /* Same as container-color for print */
+    --body-color: #ffffff; /* White for the body background */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--title-color);
+}
+
+p, li, a, span, div {
+    color: var(--text-color);
+}
+
+.light-text {
+    color: var(--text-color-light);
+}
+
+.container, .container-alt {
+    background-color: var(--container-color);
+}

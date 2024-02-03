@@ -16,4 +16,10 @@ export const SkillItem = styled.div`
     white-space: nowrap;
     margin: 2px;
     font-weight: var(--font-medium);
+
+    @media print {
+        background-color: #eee;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
 `;

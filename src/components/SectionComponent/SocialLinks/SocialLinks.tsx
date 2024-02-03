@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionComponent from "../SectionComponent/SectionComponent";
+import SectionComponent from "../SectionComponent";
 import {SocialContainer, SocialLink} from './SocialLinks.styles';
 
 interface SocialLinkProps {

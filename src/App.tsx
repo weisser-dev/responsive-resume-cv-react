@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {loadData} from "./utils/localeLoader";
 import {CVData} from './models/CVData';
 import config from './config.json';
@@ -12,7 +12,7 @@ import References from "./components/SectionComponent/References/References";
 import Languages from "./components/SectionComponent/Language/Languages";
 import Profile from "./components/SectionComponent/Profile/Profile";
 import Interests from "./components/SectionComponent/Interests/Interests";
-import SocialLinks from "./components/SocialLinks/SocialLinks";
+import SocialLinks from "./components/SectionComponent/SocialLinks/SocialLinks";
 import Home from "./components/SectionComponent/Home/Home";
 import Education from "./components/SectionComponent/Education/Education";
 import Experience from "./components/SectionComponent/Experience/Experience";
@@ -23,6 +23,7 @@ import html2canvas from "html2canvas";
 import jspdf from "jspdf";
 import Skills from "./components/SectionComponent/Skills/Skills";
 import Loader from "./components/Loader/Loader";
+import HomePrint from "./components/SectionComponent/HomePrint/HomePrint";
 
 function App() {
   const [cvData, setCvData] = useState<CVData | null>(null);
@@ -39,6 +40,59 @@ function App() {
       return localStorage.getItem('theme') || 'light';
     }
   });
+  const [isPrintMode, setIsPrintMode] = useState(false);
+
+  const printCallbackRef = useRef<() => void | null>();
+
+  useEffect(() => {
+    const originalTitle = document.title;
+    const handleBeforePrint = () => {
+      setIsPrintMode(true);
+      if (cvData) {
+        document.title = generateFilename(cvData.name, language);
+      }
+      loadTheme("print"); // Assuming you have a print theme configured
+    };
+    const handleAfterPrint = () => {
+      setIsPrintMode(false);
+      document.title = originalTitle;
+      loadTheme(theme); // Revert to the previous theme
+    };
+
+    window.addEventListener('beforeprint', handleBeforePrint);
+    window.addEventListener('afterprint', handleAfterPrint);
+
+    printCallbackRef.current = handlePrintAction;
+
+    return () => {
+      window.removeEventListener('beforeprint', handleBeforePrint);
+      window.removeEventListener('afterprint', handleAfterPrint);
+    };
+  }, []);
+
+  const printAction = () => {
+    // Set print mode and load print theme
+    setIsPrintMode(true);
+    loadTheme("print");
+
+    // Wait for the theme to load, then trigger the print
+    setTimeout(() => {
+      window.print();
+
+      // Reset to the previous theme and print mode after printing
+      setTimeout(() => {
+        setIsPrintMode(false);
+        loadTheme(theme);
+      }, 100);
+    }, 100);
+  };
+
+
+  const handlePrintAction = () => {
+    if (printCallbackRef.current) {
+      printCallbackRef.current();
+    }
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -103,6 +157,9 @@ function App() {
 
   const loadTheme = (themeName: string) => {
     let themeUrl = themeName === 'light' ? config.themes.light : config.themes.dark;
+    if (themeName == "print") {
+      themeUrl = config.themes.print;
+    }
     const existingLink = document.querySelector('link[data-theme="true"]');
     if (existingLink) {
       document.head.removeChild(existingLink);
@@ -182,6 +239,7 @@ function App() {
     );
   }
 
+  let printIndex = 1;
   return (
     <div>
       <Header
@@ -191,41 +249,79 @@ function App() {
         toggleMenu={toggleMenu}
       />
       <MainContainer>
-        <ResumeContainer id="area-cv">
-          <ResumeLeft>
-            {isMobileView && <LanguageSwitcher/>}
-            {cvData && <Home
-              name={cvData.name.toUpperCase()}
-              profession={cvData.profession}
-              profileImage={cvData.profileImage}
-              contact={cvData.contact}
-              toggleTheme={toggleTheme}
-              generatePdf={generatePdf}
-            />}
-            {cvData?.socialLinks && <SocialLinks socialLinks={cvData.socialLinks} title={localeData?.social}/>}
-            {cvData?.profile && <Profile title={localeData?.profile} description={cvData.profile}/>}
-            {cvData?.education.length > 0 && <Education education={cvData.education} title={localeData?.education}/>}
-            {cvData?.languages && <Languages languages={cvData.languages} title={localeData?.languages}/>}
-            {cvData?.interests && <Interests interests={cvData.interests} title={localeData?.interests}/>}
-          </ResumeLeft>
+        {!isPrintMode ? (
+            <ResumeContainer id="area-cv">
 
-          <ResumeRight>
-            {!isMobileView && <LanguageSwitcher/>}
-            {cvData?.skills.length > 0 && <Skills skills={cvData.skills} title={localeData?.skills}/>}
-            {cvData?.experience.length > 0 &&
-              <Experience experience={cvData.experience} title={localeData?.experience} readMore={localeData?.readMore}
-                          readLess={localeData?.readLess}/>}
-            {cvData?.certificates.length > 0 && <Certificates
-              certificates={cvData.certificates}
-              title={localeData?.certificates}
-              localizedCertId={localeData?.localizedCertId}
-              localizedViewCert={localeData?.localizedViewCert}
-            />}
-            {cvData?.references.length > 0 &&
-              <References references={cvData.references} title={localeData?.references}
-                          email={localeData?.referencesemail} phone={localeData?.referencesphone}/>}
-          </ResumeRight>
-        </ResumeContainer>
+              <ResumeLeft>
+                {isMobileView && <LanguageSwitcher/>}
+
+                {cvData && <Home
+                  name={cvData.name.toUpperCase()}
+                  profession={cvData.profession}
+                  profileImage={cvData.profileImage}
+                  contact={cvData.contact}
+                  toggleTheme={toggleTheme}
+                  generatePdf={generatePdf}
+                  printAction={printAction}
+                />}
+                {cvData?.socialLinks && <SocialLinks socialLinks={cvData.socialLinks} title={localeData?.social}/>}
+                {cvData?.profile && <Profile title={localeData?.profile} description={cvData.profile}/>}
+                {cvData?.education.length > 0 && <Education education={cvData.education} title={localeData?.education}/>}
+                {cvData?.languages && <Languages languages={cvData.languages} title={localeData?.languages}/>}
+                {cvData?.interests && <Interests interests={cvData.interests} title={localeData?.interests}/>}
+              </ResumeLeft>
+
+              <ResumeRight>
+                {!isMobileView && <LanguageSwitcher/>}
+                {cvData?.skills.length > 0 && <Skills skills={cvData.skills} title={localeData?.skills}/>}
+                {cvData?.experience.length > 0 &&
+                  <Experience experience={cvData.experience} title={localeData?.experience}
+                              readMore={localeData?.readMore} readLess={localeData?.readLess}/>}
+                {cvData?.certificates.length > 0 && <Certificates
+                  certificates={cvData.certificates}
+                  title={localeData?.certificates}
+                  localizedCertId={localeData?.localizedCertId}
+                  localizedViewCert={localeData?.localizedViewCert}
+                />}
+                {cvData?.references.length > 0 &&
+                  <References references={cvData.references} title={localeData?.references}
+                              email={localeData?.referencesemail} phone={localeData?.referencesphone}/>}
+              </ResumeRight>
+            </ResumeContainer>)
+          : (
+            <ResumeContainer id="area-cv">
+              {cvData && <HomePrint
+                name={cvData.name}
+                contact={cvData.contact}
+                socialLinks={cvData.socialLinks}
+                titleLinks={localeData?.social}
+              />}
+              {cvData?.profile &&
+                <Profile title={"0" + printIndex++ + "   " + localeData?.profile} description={cvData.profile}/>}
+              {cvData?.experience.length > 0 &&
+                <Experience experience={cvData.experience} title={"0" + printIndex++ + "   " + localeData?.experience}
+                            readMore={localeData?.readMore} readLess={localeData?.readLess}/>}
+              {cvData?.education.length > 0 &&
+                <Education education={cvData.education} title={"0" + printIndex++ + "   " + localeData?.education}/>}
+
+              {cvData?.skills.length > 0 &&
+                <Skills skills={cvData.skills} title={"0" + printIndex++ + "   " + localeData?.skills}/>}
+              {cvData?.languages &&
+                <Languages languages={cvData.languages} title={"0" + printIndex++ + "   " + localeData?.languages}/>}
+              {cvData?.references.length > 0 &&
+                <References references={cvData.references} title={"0" + printIndex++ + "   " + localeData?.references}
+                            email={localeData?.referencesemail} phone={localeData?.referencesphone}/>}
+              {cvData?.certificates.length > 0 && <Certificates
+                certificates={cvData.certificates}
+                title={"0" + printIndex++ + "   " + localeData?.certificates}
+                localizedCertId={localeData?.localizedCertId}
+                localizedViewCert={localeData?.localizedViewCert}
+              />}
+              {cvData?.interests &&
+                <Interests interests={cvData.interests} title={"0" + printIndex++ + "   " + localeData?.interests}/>}
+            </ResumeContainer>
+          )
+        }
       </MainContainer>
 
       <ScrollTopButton show={showScrollTop}/>

@@ -1,4 +1,4 @@
-// src/components/Home/Home.tsx
+// src/components/HomePrint/HomePrint.tsx
 
 import React from 'react';
 import SectionComponent from "../SectionComponent";
@@ -12,6 +12,7 @@ import {
   HomeInformationIcon,
   HomeProfession,
   HomeTitle,
+  PrintButton,
   ThemeButton
 } from './Home.styles';
 
@@ -30,9 +31,19 @@ interface HomeProps {
   };
   toggleTheme: () => void;
   generatePdf: () => void;
+  printAction: () => void;
 }
 
-const Home: React.FC<HomeProps> = ({name, profession, profileImage, contact, toggleTheme, generatePdf}) => {
+const Home: React.FC<HomeProps> = ({
+                                     name,
+                                     profession,
+                                     profileImage,
+                                     contact,
+                                     toggleTheme,
+                                     generatePdf,
+                                     printAction
+                                   }) => {
+
   return (
     <SectionComponent title="" sectionId="home">
       <HomeContainer>
@@ -64,7 +75,9 @@ const Home: React.FC<HomeProps> = ({name, profession, profileImage, contact, tog
           )}
         </HomeAddress>
       </HomeContainer>
-      <DownloadButton className="bx bx-download" title="Download PDF" onClick={generatePdf}></DownloadButton>
+      <DownloadButton className="bx bx-download" title="Download Page as Styled PDF"
+                      onClick={generatePdf}></DownloadButton>
+      <PrintButton className="bx bx-printer" title="Print / Save as optimized PDF" onClick={printAction}></PrintButton>
       <ThemeButton className="bx bx-moon" title="Toggle Theme" onClick={toggleTheme}></ThemeButton>
     </SectionComponent>
   );

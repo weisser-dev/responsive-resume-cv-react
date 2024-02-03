@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
     .generate-pdf & {
         display: none;
     }
+
+    @media print {
+        display: none;
+    }
 `;
 
 export const Select = styled.select`

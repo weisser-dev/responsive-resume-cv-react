@@ -33,6 +33,9 @@ export const CertificateInfo = styled.div`
 export const CertificateLink = styled.a`
     color: var(--text-color-light);
     font-size: var(--smaller-font-size);
+    @media print {
+        display: none;
+    }
 `;
 
 export const CertificateIDLabel = styled.span`
