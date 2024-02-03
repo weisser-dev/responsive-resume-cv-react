@@ -250,7 +250,7 @@ function App() {
   return (
     <div>
       <Header
-        name={cvData?.name}
+        cvData={cvData}
         localeData={localeData}
         isMenuOpen={isMenuOpen}
         toggleMenu={toggleMenu}
@@ -271,10 +271,11 @@ function App() {
                   generatePdf={generatePdf}
                   printAction={printAction}
                 />}
-                {cvData?.socialLinks && <SocialLinks socialLinks={cvData.socialLinks} title={localeData?.social}/>}
+                {cvData?.socialLinks.length > 0 &&
+                  <SocialLinks socialLinks={cvData.socialLinks} title={localeData?.social}/>}
                 {cvData?.profile && <Profile title={localeData?.profile} description={cvData.profile}/>}
                 {cvData?.education.length > 0 && <Education education={cvData.education} title={localeData?.education}/>}
-                {cvData?.languages && <Languages languages={cvData.languages} title={localeData?.languages}/>}
+                {cvData?.languages.length > 0 && <Languages languages={cvData.languages} title={localeData?.languages}/>}
                 {cvData?.interests && <Interests interests={cvData.interests} title={localeData?.interests}/>}
               </ResumeLeft>
 

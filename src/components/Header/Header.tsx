@@ -1,19 +1,20 @@
 import React from 'react';
 import {HeaderContainer, Nav, NavItem, NavLink, NavList, NavLogo, NavToggle} from './Header.styles';
 import {LocaleData} from "../../models/LocaleData";
+import {CVData} from "../../models/CVData";
 
 interface HeaderProps {
-  name: string;
   localeData: LocaleData;
+  cvData: CVData;
   isMenuOpen: boolean;
   toggleMenu: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({name, localeData, isMenuOpen, toggleMenu}) => {
+const Header: React.FC<HeaderProps> = ({localeData, isMenuOpen, toggleMenu, cvData}) => {
   return (
     <HeaderContainer>
       <Nav>
-        <NavLogo href="#">{name}</NavLogo>
+        <NavLogo href="#">{cvData.name}</NavLogo>
         <NavToggle onClick={toggleMenu}>
           <i className='bx bx-grid-alt'></i>
         </NavToggle>
@@ -23,46 +24,55 @@ const Header: React.FC<HeaderProps> = ({name, localeData, isMenuOpen, toggleMenu
               <i className='bx bx-home nav_icon'></i>Home
             </NavLink>
           </NavItem>
-          <NavItem>
+          {cvData?.socialLinks.length > 0 && <NavItem>
             <NavLink href="#social">
               <i className='bx bx-link-alt nav_icon'></i>{localeData.social}
             </NavLink>
-          </NavItem>
-          <NavItem>
+          </NavItem>}
+          {cvData?.profile && <NavItem>
             <NavLink href="#profile">
               <i className='bx bx-user nav_icon'></i>{localeData.profile}
             </NavLink>
-          </NavItem>
-          <NavItem>
+          </NavItem>}
+          {cvData?.education.length > 0 && <NavItem>
             <NavLink href="#education">
               <i className='bx bx-book nav_icon'></i>{localeData.education}
             </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#languages">
-              <i className='bx bxs-plane-land nav_icon'></i>{localeData.languages}
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#experience">
-              <i className='bx bx-briefcase-alt nav_icon'></i>{localeData.experience}
-            </NavLink>
-          </NavItem>
-          <NavItem>
+          </NavItem>}
+          {cvData?.languages.length > 0 &&
+            <NavItem>
+              <NavLink href="#languages">
+                <i className='bx bxs-plane-land nav_icon'></i>{localeData.languages}
+              </NavLink>
+            </NavItem>}
+          {cvData?.experience.length > 0 &&
+            <NavItem>
+              <NavLink href="#experience">
+                <i className='bx bx-briefcase-alt nav_icon'></i>{localeData.experience}
+              </NavLink>
+            </NavItem>}
+          {cvData?.certificates.length > 0 && <NavItem>
             <NavLink href="#certificate">
               <i className='bx bx-award nav_icon'></i>{localeData.certificates}
             </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#references">
-              <i className='bx bx-link-external nav_icon'></i>{localeData.references}
-            </NavLink>
-          </NavItem>
-          <NavItem>
+          </NavItem>}
+          {cvData?.references.length > 0 &&
+            <NavItem>
+              <NavLink href="#references">
+                <i className='bx bxs-contact nav_icon'></i>{localeData.references}
+              </NavLink>
+            </NavItem>}
+          {cvData?.references.length > 0 &&
+            <NavItem>
+              <NavLink href="#skills">
+                <i className='bx bx-line-chart nav_icon'></i>{localeData.references}
+              </NavLink>
+            </NavItem>}
+          {cvData?.interests && <NavItem>
             <NavLink href="#interests">
               <i className='bx bx-code nav_icon'></i>{localeData.interests}
             </NavLink>
-          </NavItem>
+          </NavItem>}
         </NavList>
       </Nav>
     </HeaderContainer>
