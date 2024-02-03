@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({localeData, isMenuOpen, toggleMenu, cvDa
               <i className='bx bx-book nav_icon'></i>{localeData.education}
             </NavLink>
           </NavItem>}
-          {cvData?.languages.length > 0 &&
+          {cvData?.languages &&
             <NavItem>
               <NavLink href="#languages">
                 <i className='bx bxs-plane-land nav_icon'></i>{localeData.languages}
