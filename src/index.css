@@ -35,6 +35,10 @@ html {
     scroll-behavior: smooth;
 }
 
+page {
+    background-color: var(--body-color);
+}
+
 body {
     margin: 0 0 var(--header-height) 0;
     padding: 0;
