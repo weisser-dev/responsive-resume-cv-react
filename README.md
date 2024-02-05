@@ -107,9 +107,8 @@ print functionality is recommended over the PDF generation function for a few re
 
 Here’s how the print functionality is implemented:
 
-jsxCopy code
-
-`const printAction = () => {
+```
+const printAction = () => {
 // Set print mode and load print theme
 setIsPrintMode(true);
 loadTheme("print");
@@ -125,14 +124,15 @@ window.print();
     }, 100);
 
 }, 100);
-};`
+};
+```
 
 For PDF generation, the application uses `html2canvas` to take a screenshot of the relevant area and then `jspdf` to
 create a PDF:
 
-javascriptCopy code
 
-`const generatePdf = () => {
+```
+const generatePdf = () => {
 const areaCv = document.getElementById('area-cv');
 if (areaCv && cvData) {
 document.body.classList.add('generate-pdf');
@@ -140,7 +140,8 @@ html2canvas(areaCv, {scale: 1, useCORS: true}).then(canvas => {
 // PDF generation logic...
 });
 }
-};`
+};
+```
 
 The resulting PDF from `generatePdf` is image-based and typically much larger in file size than the print-to-PDF
 version. Therefore, while both functionalities are available, users are advised to utilize the print option for a better
