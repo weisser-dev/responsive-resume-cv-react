@@ -1,8 +1,8 @@
 # Multilingual Resume Web App
 
-**Live:** [responsive-resume-cv-react.weisser.dev](https://responsive-resume-cv-react.weisser.dev)
+**Live:** [weisser-dev.github.io/responsive-resume-cv-react](https://weisser-dev.github.io/responsive-resume-cv-react)
 
-![Screenshot of responsive-resume-cv-react.weisser.dev](docs/screenshot.jpg)
+![Screenshot of weisser-dev.github.io/responsive-resume-cv-react](docs/screenshot.jpg)
 
 
 ![Project](project.png)
