@@ -1,5 +1,10 @@
 # Multilingual Resume Web App
 
+**Live:** [responsive-resume-cv-react.weisser.dev](https://responsive-resume-cv-react.weisser.dev)
+
+![Screenshot of responsive-resume-cv-react.weisser.dev](docs/screenshot.jpg)
+
+
 ![Project](project.png)
 
 This project is a modern, responsive, and multilingual resume web application built with React. It is designed to be
