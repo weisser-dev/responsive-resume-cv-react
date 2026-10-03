@@ -33,10 +33,10 @@ dynamic content loading based on language preference.
 - **Customizable Sections**: Titles for each section can be specified in `locales.json`.
 - **CV Information**: User CV information is entered into `cv.json`.
 - **Profile Image**: The profile image can be set by replacing `profile.jpg` in the public assets.
-- **Configurable Title**: The website title can be changed in the `/public/index.html` file within the `<title>` tag.
+- **Configurable Title**: The website title can be changed in the `/index.html` file within the `<title>` tag.
 - **Base URL Independence**: The web app is configured to run without a "baseurl", making it easy to deploy on various
   platforms.
-- **Deployment Ready**: A `deploy.yml` file for GitHub Pages is included for easy CI/CD setup.
+- **Deployment Ready**: `npm run build` produces a static, relative-path bundle in `build/` that can be served from any static host.
 
 ### ToDo´s:
 
@@ -53,6 +53,8 @@ npm run start`
 To build the static content for production, use:
 
 `npm run build`
+
+The project is built with [Vite](https://vite.dev); `npm run preview` serves the production build and `npm test` runs the Vitest suite.
 
 ## Configuration
 
@@ -71,13 +73,12 @@ To build the static content for production, use:
 - **jsPDF**: A library to generate PDF documents using JavaScript, enabling the download of the resume in PDF format.
 - **CSS/SCSS**: Used for styling components with the ability to use variables, nested rules, mixins, and more for
   maintainable stylesheets.
-- **GitHub Actions**: For continuous integration and deployment (CI/CD), allowing automated building and deployment to
-  GitHub Pages.
+- **Vite + Vitest**: Fast dev server, production bundler and unit tests.
 - **LocalStorage**: To persist user preferences like theme and language selection across sessions.
 
 ## Project Structure
 
-- `/public`: Contains the static files like themes, `index.html`, and images.
+- `/public`: Contains the static files like themes, content and images; `index.html` lives in the project root (Vite entry).
 - `/src`:
     - `/components`: React components for each section of the resume, such as education, experience and so on.
     - `/hooks`: Custom React hooks, for example, `useLanguage` to manage language state.
@@ -87,7 +88,7 @@ To build the static content for production, use:
     - `config.json`: Configuration file to set available languages and theme preferences.
     - `index.tsx`: The entry point of the React application.
 - `/themes`: Directory inside `/public` where different CSS theme files are stored.
-- `deploy.yml`: GitHub Actions workflow for deployment.
+- `vite.config.ts`: Vite/Vitest configuration (output folder `build`).
 - `package.json`: Lists dependencies, scripts, and project metadata.
 
 The project is structured to promote ease of maintenance, scalability, and separation of concerns. Each part of the
