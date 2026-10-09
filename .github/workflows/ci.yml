@@ -1,0 +1,37 @@
+name: CI
+
+# Lean build/test gate for pull requests (incl. Dependabot) on GitHub-hosted runners;
+# no secrets, no deploy.
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: ci
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build and test
+        run: |
+          npm ci --ignore-scripts
+          npm test
+          npm run build
