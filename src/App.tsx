@@ -42,7 +42,7 @@ function App() {
   });
   const [isPrintMode, setIsPrintMode] = useState(false);
 
-  const printCallbackRef = useRef<() => void | null>();
+  const printCallbackRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     const originalTitle = document.title;
